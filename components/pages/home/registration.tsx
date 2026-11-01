@@ -47,11 +47,11 @@ export function RegistrationSection() {
           ))}
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
-          <UiLink href="/registration">Conference registration</UiLink>
-          <UiLink href="/registration/package" variant="secondary">
+          <UiLink href="/#registration">Conference registration</UiLink>
+          <UiLink href="/#registration/package" variant="secondary">
             Registration package
           </UiLink>
-          <UiLink href="/authors/scholarship" variant="ghost">
+          <UiLink href="/#authors/scholarship" variant="ghost">
             Scholarship application
           </UiLink>
         </div>

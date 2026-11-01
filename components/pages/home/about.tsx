@@ -34,7 +34,7 @@ export function AboutSection() {
             />
             <p className="about-lede mt-8">{site.seriesIntro[0]}</p>
             <div className="mt-8">
-              <UiLink href="/authors/call-for-papers" variant="ghost">
+              <UiLink href="/#authors/call-for-papers" variant="ghost">
                 Read the call for papers
               </UiLink>
             </div>

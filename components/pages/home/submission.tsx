@@ -63,8 +63,8 @@ export function SubmissionSection() {
           ))}
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
-          <UiLink href="/authors/paper-preparation">Paper preparation</UiLink>
-          <UiLink href="/authors/submission" variant="ghost">
+          <UiLink href="/#authors/paper-preparation">Paper preparation</UiLink>
+          <UiLink href="/#authors/submission" variant="ghost">
             Submission guideline
           </UiLink>
         </div>

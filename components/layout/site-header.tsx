@@ -231,7 +231,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <Link href="/authors/call-for-papers" className="site-nav-cta hidden lg:inline-flex">
+        <Link href="/#authors/call-for-papers" className="site-nav-cta hidden lg:inline-flex">
           Call for papers
         </Link>
 
@@ -335,7 +335,7 @@ export function SiteHeader() {
                 </div>
               ))}
             </nav>
-            <Link href="/authors/call-for-papers" className="btn-primary mt-6 w-full">
+            <Link href="/#authors/call-for-papers" className="btn-primary mt-6 w-full">
               Call for papers
             </Link>
           </div>

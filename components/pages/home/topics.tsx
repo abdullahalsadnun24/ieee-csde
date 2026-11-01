@@ -118,7 +118,7 @@ export function TopicsSection() {
         </div>
 
         <div className="mt-10">
-          <UiLink href="/authors/call-for-papers" variant="ghost">
+          <UiLink href="/#authors/call-for-papers" variant="ghost">
             Read the call for papers
           </UiLink>
         </div>

@@ -31,8 +31,8 @@ export function Hero() {
             digital technologies, held at {site.venue.label}.
           </p>
           <div className="hero-actions mt-7 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center">
-            <UiLink href="/authors/call-for-papers">Call for papers</UiLink>
-            <UiLink href="/venue" variant="secondary">
+            <UiLink href="/#authors/call-for-papers">Call for papers</UiLink>
+            <UiLink href="/#venue" variant="secondary">
               Conference venue
             </UiLink>
           </div>

@@ -2,7 +2,6 @@ import { AnimatedIcon } from "@/components/ui/animated-icon";
 import { CallForPapersNotes, CallForPapersSpread } from "@/components/ui/call-for-papers-spread";
 import { Container } from "@/components/ui/container";
 import { UiLink } from "@/components/ui/ui-link";
-import { site } from "@/content/site";
 
 export function CallForPapersSection() {
   return (
@@ -22,10 +21,11 @@ export function CallForPapersSection() {
         </div>
 
         <CallForPapersSpread>
-          <UiLink href={site.links.paperSubmission} external>
+          {/* <UiLink href={site.links.paperSubmission} external> */}
+          <UiLink href="/#authors/call-for-papers" external>
             Open paper submission
           </UiLink>
-          <UiLink href="/authors/call-for-papers" variant="secondary">
+          <UiLink href="/#authors/call-for-papers" variant="secondary">
             Read the call for papers
           </UiLink>
         </CallForPapersSpread>
