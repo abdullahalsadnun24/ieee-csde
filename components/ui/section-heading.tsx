@@ -34,14 +34,16 @@ export function SectionHeading({
       <h2
         className={cn(
           editorial
-            ? "font-editorial text-[2rem] leading-[1.12] text-navy sm:text-[2.55rem]"
-            : "font-display text-[1.85rem] leading-[1.12] text-navy sm:text-[2.25rem]",
+            ? "font-editorial text-[1.55rem] leading-[1.15] text-navy sm:text-[2.15rem] lg:text-[2.55rem]"
+            : "font-display text-[1.5rem] leading-[1.15] text-navy sm:text-[1.95rem] lg:text-[2.25rem]",
         )}
       >
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 max-w-2xl text-[0.95rem] leading-7 text-muted">{description}</p>
+        <p className="mt-3 max-w-2xl text-[0.9rem] leading-6 text-muted sm:mt-4 sm:text-[0.95rem] sm:leading-7">
+          {description}
+        </p>
       ) : null}
     </div>
   );

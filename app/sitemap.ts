@@ -18,9 +18,11 @@ const paths = [
   "/authors/presentation",
   "/authors/scholarship",
   "/authors/past-events",
+  "/authors/upcoming",
   "/registration",
   "/registration/package",
   "/contact",
+  "/upcoming",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

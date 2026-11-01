@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { AnimatedIcon } from "@/components/ui/animated-icon";
 import { Container } from "@/components/ui/container";
 import { LogoMark } from "@/components/layout/logo-mark";
@@ -65,7 +64,7 @@ export function SiteFooter() {
             <AnimatedIcon name="compass" tone="cobalt" size="sm" />
             Explore
           </p>
-          <ul className="mt-5 space-y-2">
+          {/* <ul className="mt-5 space-y-2">
             {footerNav.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="text-sm text-white/80 transition-colors hover:text-white">
@@ -73,6 +72,16 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+          </ul> */}
+          <ul className="mt-5 space-y-2">
+            {footerNav.map((item) => (
+              <li key={item.label}>
+                {item.label}
+                {/* <Link href={item.href} className="text-sm text-white/80 transition-colors hover:text-white">
+                  {item.label}
+                </Link> */}
+              </li>
+            ))} 
           </ul>
         </div>
         <div>

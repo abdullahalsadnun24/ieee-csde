@@ -687,6 +687,75 @@ body {
   line-height: 1.45;
 }
 
+.upcoming-stage {
+  isolation: isolate;
+  display: flex;
+  min-height: calc(100svh - 7.5rem);
+  background:
+    radial-gradient(42rem 24rem at 8% 12%, #f0edff 0%, transparent 70%),
+    radial-gradient(34rem 22rem at 96% 88%, #ddf8ff 0%, transparent 68%),
+    #ffffff;
+}
+
+.upcoming-watermark {
+  pointer-events: none;
+  position: absolute;
+  left: -1%;
+  bottom: -0.15rem;
+  z-index: 0;
+  color: hsla(226, 58%, 18%, 0.045);
+  font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(8rem, 22vw, 18rem);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: 0.75;
+  user-select: none;
+}
+
+.upcoming-board {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 24rem;
+  border-radius: 1.6rem;
+  border: 1px solid hsla(0, 0%, 100%, 0.86);
+  background: #ddf8ff;
+  padding: 2rem 1.85rem 2.15rem;
+  box-shadow:
+    0 22px 48px hsla(226, 58%, 18%, 0.1),
+    inset 0 1px 0 hsla(0, 0%, 100%, 0.92);
+}
+
+.upcoming-field {
+  position: absolute;
+  right: -12%;
+  bottom: -18%;
+  width: 128%;
+  height: 62%;
+  opacity: 0.72;
+}
+
+.upcoming-year {
+  margin-top: 1.15rem;
+  color: #172554;
+  font-family: var(--font-serif-editorial), ui-serif, Georgia, serif;
+  font-size: clamp(4.2rem, 8vw, 6.2rem);
+  font-weight: 600;
+  letter-spacing: -0.08em;
+  line-height: 0.78;
+}
+
+.upcoming-year span {
+  display: block;
+  margin-top: 0.85rem;
+  color: #3157d5;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
 .dates-table {
   overflow: hidden;
   border-radius: 1.5rem;
@@ -1515,6 +1584,10 @@ body {
     white-space: nowrap;
     font-size: 0.88rem;
   }
+
+  .site-nav.is-scrolled .nav-shell {
+    background: hsla(0, 0%, 100%, 0.96);
+  }
 }
 
 .btn-primary,
@@ -2313,34 +2386,98 @@ details summary::-webkit-details-marker {
 .keynote-stage {
   isolation: isolate;
   background: #ffffff;
+  scroll-margin-top: 6.75rem;
+}
+
+.keynote-board {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.keynote-cast-wrap {
+  order: -1;
+  position: sticky;
+  top: calc(4.2rem + env(safe-area-inset-top, 0px));
+  z-index: 15;
+  min-width: 0;
+  padding-top: 0.35rem;
+  padding-bottom: 0.4rem;
+  background: #ffffff;
+}
+
+.keynote-cast-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.keynote-cast-kicker {
+  margin: 0;
+  color: #3157d5;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.keynote-spot-controls {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.keynote-spot-dir {
+  display: inline-flex;
+  width: 2.35rem;
+  height: 2.35rem;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: #172554;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.keynote-spot-dir svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.keynote-spot-count {
+  min-width: 3.4rem;
+  margin: 0;
+  color: #172554;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
 }
 
 .keynote-spot {
   display: grid;
+  grid-template-columns: 8.15rem minmax(0, 1fr);
+  grid-template-areas:
+    "photo copy"
+    "more more";
   overflow: hidden;
-  border-radius: 1.7rem;
+  border-radius: 1.35rem;
   background: #172554;
   box-shadow: 0 28px 60px hsla(226, 58%, 18%, 0.18);
 }
 
-@media (min-width: 1024px) {
-  .keynote-spot {
-    grid-template-columns: minmax(17rem, 0.42fr) minmax(0, 1fr);
-    min-height: 32rem;
-  }
-}
-
 .keynote-spot-photo {
   position: relative;
-  min-height: 22rem;
+  grid-area: photo;
+  min-height: 11.25rem;
   overflow: hidden;
   background: #0f172a;
-}
-
-@media (min-width: 1024px) {
-  .keynote-spot-photo {
-    min-height: 100%;
-  }
 }
 
 .keynote-spot-photo-inner {
@@ -2354,6 +2491,7 @@ details summary::-webkit-details-marker {
 }
 
 .keynote-spot-copy-wrap {
+  grid-area: copy;
   min-width: 0;
 }
 
@@ -2362,14 +2500,14 @@ details summary::-webkit-details-marker {
   min-width: 0;
   flex-direction: column;
   height: 100%;
-  padding: 1.45rem 1.3rem 1.5rem;
+  padding: 0.9rem 0.95rem 1rem;
   color: #ffffff;
 }
 
-@media (min-width: 640px) {
-  .keynote-spot-copy {
-    padding: 1.85rem 1.9rem 1.95rem;
-  }
+.keynote-spot-more {
+  grid-area: more;
+  min-width: 0;
+  padding: 0 1rem 1.1rem;
 }
 
 .keynote-k {
@@ -2393,31 +2531,32 @@ details summary::-webkit-details-marker {
 }
 
 .keynote-name {
-  margin-top: 1rem;
+  margin-top: 0.55rem;
   font-family: var(--font-serif-editorial), ui-serif, Georgia, serif;
-  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  font-size: clamp(1.15rem, 4.6vw, 1.55rem);
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.15;
 }
 
 .keynote-affiliation {
-  margin-top: 0.4rem;
+  margin-top: 0.3rem;
   color: hsla(0, 0%, 100%, 0.68);
-  font-size: 0.92rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 .keynote-title {
-  margin-top: 1rem;
+  margin: 0 0 0.85rem;
   color: #ffffff;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: -0.02em;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 .keynote-talk {
-  margin-top: 1.25rem;
+  margin-top: 0;
 }
 
 .keynote-tabs {
@@ -2445,12 +2584,13 @@ details summary::-webkit-details-marker {
 }
 
 .keynote-talk-panel {
-  margin-top: 0.9rem;
-  max-height: 11.5rem;
+  margin-top: 0.75rem;
+  max-height: 10.5rem;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   color: hsla(0, 0%, 100%, 0.78);
-  font-size: 0.92rem;
-  line-height: 1.7;
+  font-size: 0.88rem;
+  line-height: 1.65;
 }
 
 .keynote-talk-kicker {
@@ -2476,30 +2616,25 @@ details summary::-webkit-details-marker {
 }
 
 .keynote-cast {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin: 1rem 0 0;
-  padding: 0;
+  display: flex;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0.1rem 0.15rem 0.45rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   list-style: none;
 }
 
-.keynote-cast li:last-child {
-  grid-column: 1 / -1;
-  max-width: calc(50% - 0.375rem);
-  justify-self: center;
+.keynote-cast::-webkit-scrollbar {
+  display: none;
 }
 
-@media (min-width: 640px) {
-  .keynote-cast {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .keynote-cast li:last-child {
-    grid-column: auto;
-    max-width: none;
-    justify-self: stretch;
-  }
+.keynote-cast li {
+  flex: 0 0 7.1rem;
+  scroll-snap-align: start;
 }
 
 .keynote-cast-btn {
@@ -2556,16 +2691,119 @@ details summary::-webkit-details-marker {
 }
 
 .keynote-cast-name {
+  display: -webkit-box;
   margin: 0.2rem 0.35rem 0;
+  overflow: hidden;
   color: #172554;
   font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.3;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .keynote-cast-btn.is-active .keynote-cast-name {
   color: #ffffff;
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .keynote-spot {
+    grid-template-columns: 12rem minmax(0, 1fr);
+  }
+
+  .keynote-spot-photo {
+    min-height: 14rem;
+  }
+
+  .keynote-spot-copy {
+    padding: 1.15rem 1.2rem 1.05rem;
+  }
+
+  .keynote-spot-more {
+    padding: 0 1.2rem 1.25rem;
+  }
+
+  .keynote-cast li {
+    flex-basis: 8.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .keynote-cast-wrap {
+    position: static;
+    order: 2;
+    z-index: auto;
+    padding: 0;
+    background: transparent;
+  }
+
+  .keynote-cast-bar {
+    display: none;
+  }
+
+  .keynote-spot {
+    grid-template-columns: minmax(17rem, 0.42fr) minmax(0, 1fr);
+    grid-template-areas:
+      "photo copy"
+      "photo more";
+    min-height: 32rem;
+    border-radius: 1.7rem;
+  }
+
+  .keynote-spot-photo {
+    min-height: 100%;
+  }
+
+  .keynote-spot-copy {
+    height: auto;
+    padding: 1.85rem 1.9rem 0.35rem;
+  }
+
+  .keynote-spot-more {
+    padding: 0 1.9rem 1.95rem;
+  }
+
+  .keynote-name {
+    margin-top: 1rem;
+    font-size: clamp(1.55rem, 3vw, 2.15rem);
+  }
+
+  .keynote-affiliation {
+    margin-top: 0.4rem;
+    font-size: 0.92rem;
+  }
+
+  .keynote-title {
+    margin: 0 0 0.2rem;
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+
+  .keynote-talk {
+    margin-top: 1.25rem;
+  }
+
+  .keynote-talk-panel {
+    margin-top: 0.9rem;
+    max-height: 11.5rem;
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .keynote-cast {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
+    overflow: visible;
+    padding: 0;
+    scroll-snap-type: none;
+  }
+
+  .keynote-cast li {
+    flex: none;
+    min-width: 0;
+  }
 }
 
 .glass-tilt {
@@ -3632,7 +3870,8 @@ details summary::-webkit-details-marker {
   .about-watermark,
   .cfp-watermark,
   .dates-watermark,
-  .contact-watermark {
+  .contact-watermark,
+  .upcoming-watermark {
     display: none;
   }
 
@@ -3691,8 +3930,14 @@ details summary::-webkit-details-marker {
     padding: 1.25rem 1.15rem 1.35rem;
   }
 
-  .dates-year {
+  .dates-year,
+  .upcoming-year {
     font-size: 3.4rem;
+  }
+
+  .upcoming-board {
+    min-height: 18rem;
+    padding: 1.5rem 1.35rem 1.6rem;
   }
 
   .dates-row {
@@ -3735,16 +3980,34 @@ details summary::-webkit-details-marker {
     border-radius: 1rem;
   }
 
+  .keynote-spot {
+    grid-template-columns: 7.35rem minmax(0, 1fr);
+    border-radius: 1.2rem;
+  }
+
   .keynote-spot-photo {
-    min-height: 16.5rem;
+    min-height: 10.75rem;
   }
 
   .keynote-spot-copy {
-    padding: 1.2rem 1.1rem 1.3rem;
+    padding: 0.8rem 0.85rem 0.85rem;
+  }
+
+  .keynote-spot-more {
+    padding: 0 0.9rem 1rem;
+  }
+
+  .keynote-cast li {
+    flex-basis: 6.45rem;
   }
 
   .keynote-cast-name {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .keynote-spot-dir {
+    width: 2.2rem;
+    height: 2.2rem;
   }
 
   .btn-primary,
