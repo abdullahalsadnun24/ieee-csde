@@ -1,0 +1,50 @@
+export const journals = [
+  {
+    name: "Energy Sustainability",
+    listedAs: "Sustainability",
+    impactFactor: "3.9",
+    href: "https://www.mdpi.com/journal/sustainability",
+    image: "/images/journals/sustainability.png",
+    imageWidth: 283,
+    imageHeight: 74,
+    description:
+      "Sustainability is an international, cross-disciplinary, scholarly, peer-reviewed and open access journal of environmental, cultural, economic, and social sustainability of human beings.",
+  },
+  {
+    name: "International Journal of Intelligent Systems",
+    impactFactor: "8.7",
+    href: "https://onlinelibrary.wiley.com/journal/1098111x",
+    image: "/images/journals/intelligent-systems.png",
+    imageWidth: 355,
+    imageHeight: 73,
+    description:
+      "Special Issue on Deep Learning-Driven Knowledge Graphs for Intelligent Computing and Applications.",
+  },
+  {
+    name: "Transactions on Emerging Telecommunications Technologies",
+    impactFactor: "2.6",
+    href: "https://onlinelibrary.wiley.com/journal/21613915",
+    image: "/images/journals/transactions.webp",
+    imageWidth: 455,
+    imageHeight: 90,
+    description: "Special Issue on Blockchain Communication Security.",
+  },
+  {
+    name: "Information Sciences",
+    impactFactor: "6.9",
+    href: "https://www.sciencedirect.com/journal/information-sciences",
+    image: "/images/journals/information-sciences.png",
+    imageWidth: 455,
+    imageHeight: 107,
+    description: "Special Issue on Privacy Risk Evaluation of Intelligent Algorithms.",
+  },
+  {
+    name: "World Wide Web",
+    impactFactor: "2.7",
+    href: "https://www.springer.com/journal/11280",
+    image: "/images/journals/world-wide-web.png",
+    imageWidth: 404,
+    imageHeight: 75,
+    description: "Special Issue on Blockchain Communication Security.",
+  },
+] as const;

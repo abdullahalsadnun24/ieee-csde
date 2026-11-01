@@ -1,0 +1,32 @@
+export const sponsors = [
+  {
+    name: "IEEE",
+    shortName: "IEEE",
+    role: "Sponsor",
+    src: "/images/brand/ieee-clear.png",
+    alt: "IEEE, Advancing Technology for Humanity",
+    width: 666,
+    height: 375,
+    dark: false,
+  },
+  {
+    name: "IEEE Computer Society Bangladesh Chapter",
+    shortName: "IEEE CS Bangladesh Chapter",
+    role: "Sponsor",
+    src: "/images/brand/ieee-cs-bangladesh.png",
+    alt: "IEEE Computer Society Bangladesh Chapter",
+    width: 211,
+    height: 80,
+    dark: false,
+  },
+  {
+    name: "Bangladesh University of Business and Technology",
+    shortName: "Bangladesh University of Business & Technology (BUBT)",
+    role: "Sponsor",
+    src: "/images/brand/bubt-clear.png",
+    alt: "Bangladesh University of Business and Technology",
+    width: 573,
+    height: 686,
+    dark: false,
+  },
+] as const;
